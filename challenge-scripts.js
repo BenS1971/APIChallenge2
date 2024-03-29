@@ -1,6 +1,6 @@
 let PokemonInfoList = document.querySelector("ul");
 
-fetch("https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0")
+fetch("https://pokeapi.co/api/v2/pokemon?limit=5&offset=0")
     .then(function (response) {
         console.log(response);
         return response.json();
@@ -8,15 +8,21 @@ fetch("https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0")
     .then(function(json) {
         console.log(json);
         let pokemon = json.results;
+    for (const p of pokemon) {
+            let listItem = document.createElement("ul")
+            listItem.innerText = p.name;
+            PokemonInfoList.appendChild(listItem);
+    }
     })
 
-    for (const p of pokemon) {
+ /*   for (const p of pokemon) {
         let listItem = document.createElement("ul")
         listItem.innerText = p.name;
         PokemonInfoList.appendChild(listItem);
-    }
+    } 
+*/
 
-    fetch("https://pokeapi.co/api/v2/type")
+    fetch("https://pokeapi.co/api/v2/type?limit=5&offset=0")
     .then(function (response) {
         console.log(response);
         return response.json();
@@ -24,10 +30,10 @@ fetch("https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0")
     .then(function(json) {
         console.log(json);
         let pokemon = json.results;
-    })
-
     for (const p of pokemon) {
-        let listItem = document.createElement("ul")
-        listItem.innerText = p.name;
-        PokemonInfoList.appendChild(listItem);
-    }
+            let listItem = document.createElement("ul")
+            listItem.innerText = p.name;
+            PokemonInfoList.appendChild(listItem);
+        } })
+
+    
