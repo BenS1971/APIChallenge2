@@ -8,6 +8,7 @@ h1 {
     font-family: sans-serif;
     color: red;
     font-size: 4.0em;
+    text-shadow: 3px 4px black;
 }
 
 p {
@@ -20,5 +21,10 @@ p {
 
 .button {
     font-family: sans-serif;
-    font-weight: 900;
+    font-weight: 1000;
+}
+
+img {
+    box-shadow: 5px 5px gray;
+    border: 1px solid black;
 }
